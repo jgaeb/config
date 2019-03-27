@@ -1,0 +1,4 @@
+vim/backups/*
+vim/swapfiles/*
+vim/undofiles/*
+vim/.netrwhist
