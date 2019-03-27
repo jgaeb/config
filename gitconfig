@@ -1,0 +1,8 @@
+[user]
+	name = Johann Gaebler
+	email = johann.gaebler@gmail.com
+[core]
+	autocrlf = input
+	editor = vim
+[push]
+	default = simple
