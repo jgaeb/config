@@ -20,17 +20,15 @@ cd "$BASEDIR"
 
 if [[ $1 == "-a" ]]
 then
-	for f in *
-	do
-		if [[ "$f" != "$0" ]]
-		then
-			ln -shi "${PWD}/${f}" "${HOME}/.${f}"
-		fi
-	done
-
+	FILES=( * )
 else
-	for f in ${FILES-@}
-	do
-		ln -shi "${PWD}/${f}" "${HOME}/.${f}"
-	done
+	FILES="$@"
 fi
+
+for f in $FILES
+do
+	if [[ "$f" != "$0" ]]
+	then
+		ln -shi "${PWD}/${f}" "${HOME}/.${f}"
+	fi
+done
