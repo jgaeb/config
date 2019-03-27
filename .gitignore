@@ -2,3 +2,7 @@ vim/backups/*
 vim/swapfiles/*
 vim/undofiles/*
 vim/.netrwhist
+
+!vim/backups/.gitkeep
+!vim/swapfiles/.gitkeep
+!vim/undofiles/.gitkeep
