@@ -92,3 +92,10 @@ bindkey -M vicmd '/' history-incremental-search-forward
 # Beginning search with arrow keys
 bindkey -M vicmd "k" up-line-or-beginning-search
 bindkey -M vicmd "j" down-line-or-beginning-search
+
+# Ensure locale settings are correct
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# Turn on ksh globbing
+setopt ksh_glob
