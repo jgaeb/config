@@ -134,8 +134,19 @@ if !&textwidth
 	set textwidth=80
 endif
 
+" Automatically install vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
-	  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-	      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-    endif
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+           \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Load vim-plug packages, being sure to use single quotes
+call plug#begin('~/.vim/bundle')
+
+" Load nvim-r if editing an .R* file.
+Plug 'https://github.com/jalvesaq/Nvim-R.git', { 'for': ['r', 'r_nvimr',
+         \ 'rhelp', 'rhelp_nvimr', 'rmd', 'rmd_nvimr', 'rnoweb',
+         \ 'rnoweb_nvimr', 'rrst', 'rrst_nvimr'] }
+
+call plug#end()
