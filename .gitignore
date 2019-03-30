@@ -1,8 +1,10 @@
 vim/backups/*
 vim/swapfiles/*
 vim/undofiles/*
+vim/autoload/*
 vim/.netrwhist
 
 !vim/backups/.gitkeep
 !vim/swapfiles/.gitkeep
 !vim/undofiles/.gitkeep
+!vim/autoload/.gitkeep
