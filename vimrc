@@ -43,10 +43,9 @@ map Q gq
 inoremap <C-U> <C-G>u<C-U>
 
 " In many terminal emulators the mouse works just fine, thus enable it.
-" Causes weirdness when logged out of TMUX session, so removed.
-" if has('mouse')
-"   set mouse=a
-" endif
+if has('mouse')
+  set mouse=a
+endif
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -145,8 +144,6 @@ endif
 call plug#begin('~/.vim/bundle')
 
 " Load nvim-r if editing an .R* file.
-Plug 'https://github.com/jalvesaq/Nvim-R.git', { 'for': ['r', 'r_nvimr',
-         \ 'rhelp', 'rhelp_nvimr', 'rmd', 'rmd_nvimr', 'rnoweb',
-         \ 'rnoweb_nvimr', 'rrst', 'rrst_nvimr'] }
+Plug 'https://github.com/jalvesaq/Nvim-R.git'
 
 call plug#end()
