@@ -69,8 +69,7 @@ if has("autocmd")
   au!
 
   " For all text files set 'textwidth' to 78 characters.
-  " autocmd FileType text setlocal textwidth=78
-  " (HANS REMOVED; SEE BELOW.)
+  autocmd FileType text setlocal textwidth=78
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
@@ -130,5 +129,7 @@ inoremap <Down> <nop>
 inoremap <Left> <nop>
 inoremap <Right> <nop>
 
-" Set column width always to be 80, as a default.
-set textwidth=80
+" Default textwidth is 80 if not otherwise set
+if !&textwidth
+	set textwidth=80
+endif
