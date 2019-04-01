@@ -110,6 +110,9 @@ set number
 
 " Use kj to switch into normal mode.
 inoremap <silent> kj <ESC>
+if has('nvim')
+  tnoremap kj <C-\><C-n>
+endif
 
 " Save backups and swap files, and undo files in a specified folder in the home
 " directory to avoid cluttering everything up.
