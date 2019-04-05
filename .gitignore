@@ -13,5 +13,4 @@ vim/.netrwhist
 # To avoid uploading any private keys, but uploading public keys
 ssh/*
 
-!ssh/*.pub
 !ssh/config
