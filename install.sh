@@ -29,6 +29,6 @@ for f in $FILES
 do
 	if [[ "$f" != "$0" ]]
 	then
-		ln -shi "${PWD}/${f}" "${HOME}/.${f}"
+		ln -sni "${PWD}/${f}" "${HOME}/.${f}"
 	fi
 done
