@@ -1,3 +1,4 @@
+# To avoid uploading any swapfiles etc to github
 vim/backups/*
 vim/swapfiles/*
 vim/undofiles/*
@@ -8,3 +9,9 @@ vim/.netrwhist
 !vim/swapfiles/.gitkeep
 !vim/undofiles/.gitkeep
 !vim/bundle/.gitkeep
+
+# To avoid uploading any private keys, but uploading public keys
+ssh/*
+
+!ssh/*.pub
+!ssh/config
