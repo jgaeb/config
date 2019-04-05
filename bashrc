@@ -1,5 +1,5 @@
 # Make sure local binaries are in path
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 
 # Enable extended globbing
 shopt -s extglob
