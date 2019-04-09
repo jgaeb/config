@@ -150,3 +150,10 @@ call plug#begin('~/.vim/bundle')
 Plug 'https://github.com/jalvesaq/Nvim-R.git'
 
 call plug#end()
+
+" Open nvim-r terminals in new tmux pane instead of in nvim
+if has('nvim')
+   let R_in_buffer = 0
+   let R_applescript = 0
+   let R_tmux_split = 1
+endif
