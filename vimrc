@@ -148,6 +148,7 @@ call plug#begin('~/.vim/bundle')
 
 " Load nvim-r if editing an .R* file.
 Plug 'https://github.com/jalvesaq/Nvim-R.git'
+Plug 'chrisbra/csv.vim'
 
 call plug#end()
 
