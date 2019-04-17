@@ -5,3 +5,5 @@ $if mode=vi
 	set keymap vi-insert
 	"kj": vi-movement-mode # remap escape
 $endif
+
+set enable-bracketed-paste on
