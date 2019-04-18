@@ -27,7 +27,7 @@ fi
 
 for f in $FILES
 do
-	if [[ "$f" != "$0" ]]
+	if [[ $( basename "$f" ) != $( basename "$0" ) ]]
 	then
 		ln -sni "${PWD}/${f%/}" "${HOME}/.${f%/}"
 	fi
