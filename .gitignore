@@ -14,3 +14,8 @@ vim/.netrwhist
 ssh/*
 
 !ssh/config
+
+# No need to upload procedurally generated dotfiles.
+config/dconf
+config/neofetch
+config/htop
