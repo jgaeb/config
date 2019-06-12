@@ -146,9 +146,10 @@ endif
 " Load vim-plug packages, being sure to use single quotes
 call plug#begin('~/.vim/bundle')
 
-Plug 'https://github.com/jalvesaq/Nvim-R.git'
+Plug 'jalvesaq/Nvim-R'
 Plug 'chrisbra/csv.vim'
 Plug 'lervag/vimtex'
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
