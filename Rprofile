@@ -1,4 +1,5 @@
-# Make a new environment for personal functions
+# Make a new environment for personal functions. This allows the masking of base
+# R functions without including them in the global environment.
 personal <- new.env()
 assign(
     "quit",
@@ -18,3 +19,6 @@ assign(
 attach(personal)
 
 rm(personal)
+
+# Stop R from opening an X11 window every time online documentation is opened.
+options("menu.graphics" = FALSE)
