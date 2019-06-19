@@ -150,6 +150,7 @@ Plug 'jalvesaq/Nvim-R'
 Plug 'chrisbra/csv.vim'
 Plug 'lervag/vimtex'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'leafgarland/typescript-vim'
 
 call plug#end()
 
