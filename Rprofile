@@ -25,3 +25,6 @@ options("menu.graphics" = FALSE)
 
 # Don't accidentally match things with the dollar sign.
 options("warnPartialMatchDollar" = TRUE)
+
+# Issue an error if an `if` statement has length greater than one.
+Sys.setenv("_R_CHECK_LENGTH_1_CONDITION_" = "true")
