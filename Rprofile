@@ -22,3 +22,6 @@ rm(personal)
 
 # Stop R from opening an X11 window every time online documentation is opened.
 options("menu.graphics" = FALSE)
+
+# Don't accidentally match things with the dollar sign.
+options("warnPartialMatchDollar" = TRUE)
