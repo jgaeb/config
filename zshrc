@@ -34,7 +34,10 @@ export LC_ALL=en_US.UTF-8
 setopt ksh_glob
 
 # Source for great good!
-source ~/.ghcup/env
+if [[ -e ~/.ghcup/env ]]
+then
+	source ~/.ghcup/env
+fi
 
 ################################### DISPLAY ####################################
 
