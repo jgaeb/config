@@ -12,10 +12,11 @@ vim/.netrwhist
 
 # To avoid uploading any private keys, but uploading public keys
 ssh/*
-
 !ssh/config
 
 # No need to upload procedurally generated dotfiles.
 config/dconf
 config/neofetch
 config/htop
+config/configstore
+config/gtk-2.0
