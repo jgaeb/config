@@ -59,7 +59,7 @@ function short_pwd {
 setopt prompt_subst
 
 # Set the left-hand prompt
-PROMPT="%K{blue}%F{black}算 %f%k%F{blue}%f "
+PROMPT="%K{blue}%F{black} 算 %f%k%F{blue}%f "
 
 # Set the right-hand prompt
 RPROMPT='%F{yellow}%f%K{yellow}%F{black} $( short_pwd ) %f%k'

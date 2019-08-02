@@ -31,6 +31,6 @@ function short_pwd {
 }
 
 # Set the three pieces of the prompt
-PS1='\[\e[42m\]\[\e[30m\](\u@\h) \[\e[43m\]\[\e[32m\]'
+PS1='\[\e[42m\]\[\e[30m\] (\u@\h) \[\e[43m\]\[\e[32m\]'
 PS1+='\[\e[43m\]\[\e[30m\] $( short_pwd ) \[\e[44m\]\[\e[33m\]'
 PS1+='\[\e[44m\]\[\e[30m\] 算 \[\e[100m\]\[\e[34m\]\[\e[0m\] '
