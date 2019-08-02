@@ -1,14 +1,5 @@
 # To avoid uploading any swapfiles etc to github
-vim/backups/*
-vim/swapfiles/*
-vim/undofiles/*
-vim/bundle/*
-vim/.netrwhist
-
-!vim/backups/.gitkeep
-!vim/swapfiles/.gitkeep
-!vim/undofiles/.gitkeep
-!vim/bundle/.gitkeep
+vim/*
 
 # To avoid uploading any private keys, but uploading public keys
 ssh/*
