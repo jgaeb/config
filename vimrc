@@ -101,9 +101,7 @@ if has('langmap') && exists('+langnoremap')
   set langnoremap
 endif
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Hans added these and they may break everything :| "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""" PERSONAL """"""""""""""""""""""""""""""""""""
 
 " Set line numbers on LHS.
 set number
@@ -136,10 +134,28 @@ if !&textwidth
 	set textwidth=80
 endif
 
+" Automatically install the solarized dark color scheme
+if empty(glob("~/.vim/colors/solarized.vim"))
+  silent !curl -fLo ~/.vim/colors/solarized.vim --create-dirs
+		\ https://raw.githubusercontent.com/altercation/vim-colors-solarized/master/colors/solarized.vim
+  silent !curl -fLo ~/.vim/autoload/togglebg.vim --create-dirs
+  		\ https://raw.githubusercontent.com/altercation/vim-colors-solarized/master/autoload/togglebg.vim
+  silent !curl -fLo ~/.vim/bitmaps/togglebg.png --create-dirs
+		\ https://github.com/altercation/vim-colors-solarized/blob/master/bitmaps/togglebg.png?raw=true
+  silent !curl -fLo ~/.vim/doc/solarized.txt --create-dirs
+  		\ https://raw.githubusercontent.com/altercation/vim-colors-solarized/master/doc/solarized.txt
+  silent !curl -fLo ~/.vim/doc/tags --create-dirs
+		\ https://raw.githubusercontent.com/altercation/vim-colors-solarized/master/doc/tags
+endif
+
+" Enable solarized dark
+set background=dark
+colorscheme solarized
+
 " Automatically install vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-           \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+		\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -151,7 +167,6 @@ Plug 'chrisbra/csv.vim'
 Plug 'lervag/vimtex'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'leafgarland/typescript-vim'
-Plug 'neovimhaskell/haskell-vim'
 
 call plug#end()
 
