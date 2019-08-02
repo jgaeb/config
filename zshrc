@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.ghcup/bin:$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -99,3 +99,10 @@ export LC_ALL=en_US.UTF-8
 
 # Turn on ksh globbing
 setopt ksh_glob
+
+# Source for great good!
+source ~/.ghcup/env
+
+# Needed for node
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh

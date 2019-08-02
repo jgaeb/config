@@ -8,3 +8,6 @@ shopt -s extglob
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export PATH=$PATH:~/bin/libphutil/bin:~/bin/arcanist/bin
+
+# Source for great good!
+source ~/.ghcup/env
