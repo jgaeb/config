@@ -22,7 +22,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 # Function for displaying only the last three tokens of the working directory.
 function short_pwd {
 	IFS="/" read -ra dir_tokens <<< "$PWD"
-	if [[ ${#dir_tokens[@]} -ge 3 ]]
+	if [[ ${#dir_tokens[@]} -gt 3 ]]
 	then
 		echo "...""$( for f in ${dir_tokens[@]: -3}; do printf "/$f"; done)"
 	else
