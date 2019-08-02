@@ -151,6 +151,7 @@ Plug 'chrisbra/csv.vim'
 Plug 'lervag/vimtex'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'leafgarland/typescript-vim'
+Plug 'neovimhaskell/haskell-vim'
 
 call plug#end()
 
