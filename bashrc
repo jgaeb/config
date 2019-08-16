@@ -16,9 +16,6 @@ fi
 
 ################################### DISPLAY ####################################
 
-# Disable venv changing the prompt
-export VIRTUAL_ENV_DISABLE_PROMPT=1
-
 # Function for displaying only the last three tokens of the working directory.
 function short_pwd {
 	IFS="/" read -ra dir_tokens <<< "$PWD"
