@@ -10,6 +10,13 @@ export EDITOR='vim'
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+# Log history
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt INC_APPEND_HISTORY
+setopt EXTENDED_HISTORY
+
 # Use vi mode
 bindkey -v
 
@@ -40,9 +47,6 @@ then
 fi
 
 ################################### DISPLAY ####################################
-
-# Disable venv changing the prompt
-export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # Function for displaying only the last three tokens of the working directory.
 function short_pwd {
