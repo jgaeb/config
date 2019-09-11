@@ -5,7 +5,7 @@ export PATH=$HOME/.ghcup/bin:$HOME/bin:/usr/local/bin:$PATH
 export MANPATH="/usr/local/man:$MANPATH"
 
 # Preferred editor
-export EDITOR='vim'
+which nvim > /dev/null && export EDITOR='nvim' || export EDITOR='vim'
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
@@ -28,6 +28,11 @@ export KEYTIMEOUT=10
 # Better searching in command mode
 bindkey -M vicmd '?' history-incremental-search-backward
 bindkey -M vicmd '/' history-incremental-search-forward
+
+# Edit the command line in nvim
+autoload edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd ' ' edit-command-line
 
 # Beginning search with arrow keys
 bindkey -M vicmd "k" up-line-or-beginning-search
