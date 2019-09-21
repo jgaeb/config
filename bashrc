@@ -4,6 +4,16 @@ export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 # Enable extended globbing
 shopt -s extglob
 
+# Set VISUAL and EDITOR to nvim or vim otherwise
+if which nvim > /dev/null
+then
+	export EDITOR=$( which nvim )
+	export VISUAL=$( which nvim )
+else
+	export EDITOR=$( which vim )
+	export VISUAL=$( which vim )
+fi
+
 # Ensure locale settings are correct
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8

@@ -4,6 +4,8 @@ set editing-mode vi
 $if mode=vi
 	set keymap vi-insert
 	"kj": vi-movement-mode # remap escape
+	set keymap vi-command
+	" ": edit-and-execute-command # remap v
 $endif
 
 set enable-bracketed-paste on

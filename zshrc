@@ -4,8 +4,15 @@ export PATH=$HOME/.ghcup/bin:$HOME/bin:/usr/local/bin:$PATH
 # Update manpath to find local man pages
 export MANPATH="/usr/local/man:$MANPATH"
 
-# Preferred editor
-which nvim > /dev/null && export EDITOR='nvim' || export EDITOR='vim'
+# Set VISUAL and EDITOR to nvim or vim otherwise
+if which nvim > /dev/null
+then
+	export EDITOR=$( which nvim )
+	export VISUAL=$( which nvim )
+else
+	export EDITOR=$( which vim )
+	export VISUAL=$( which vim )
+fi
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
