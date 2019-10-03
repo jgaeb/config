@@ -1,8 +1,14 @@
 Host *
-	ControlMaster auto
-	ControlPath ~/.ssh/%r@%h:%p
-	ControlPersist 5m
+	ControlMaster=auto
+	ControlPath=~/.ssh/%r@%h:%p
+	ControlPersist=1m
 
 Host soal-?
-	ForwardX11 yes
-	ForwardX11Trusted yes
+	HostName=%h.stanford.edu
+	User=jgaeb
+	ForwardX11=yes
+	ForwardX11Trusted=yes
+
+Host ca-debt
+	HostName=23.251.146.98
+	User=jgaeb
