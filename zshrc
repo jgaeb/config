@@ -1,5 +1,5 @@
 # Setup $PATH correctly
-export PATH=$HOME/.ghcup/bin:$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/Library/Python/3.7/bin:$HOME/.ghcup/bin:$HOME/bin:/usr/local/bin:$PATH
 
 # Update manpath to find local man pages
 export MANPATH="/usr/local/man:$MANPATH"
