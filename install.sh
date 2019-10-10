@@ -25,7 +25,7 @@ else
 	FILES="$@"
 fi
 
-for f in $FILES
+for f in ${FILES[*]}
 do
 	if [[ $( basename "$f" ) != $( basename "$0" ) ]]
 	then
