@@ -1,5 +1,8 @@
 # Setup $PATH correctly
-export PATH=$HOME/Library/Python/3.7/bin:$HOME/.ghcup/bin:$HOME/bin:/usr/local/bin:$PATH
+path+=("$HOME/Library/Python/3.7/bin:")
+path+=("$HOME/.ghcup/bin:$HOME/bin:")
+path+=("/usr/local/bin:")
+path+=("$HOME/.gem/ruby/2.6.0/bin:")
 
 # Update manpath to find local man pages
 export MANPATH="/usr/local/man:$MANPATH"
@@ -65,7 +68,7 @@ function short_pwd {
 	local dir_tokens=(${(s:/:)PWD})	
 	if [[ $#dir_tokens -gt 3 ]]
 	then
-		echo "...""$( for f in ${dir_tokens[@]: -3:3}; do printf "/$f"; done)"
+		echo "...""$( for f in ${dir_tokens[@]: -3:3}; do echo -n "/${f}"; done)"
 	else
 		echo $PWD
 	fi

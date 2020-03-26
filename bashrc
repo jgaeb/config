@@ -1,5 +1,6 @@
 # Make sure local binaries are in path
-export PATH="$HOME/Library/Python/3.7/bin:$HOME/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/Library/Python/3.7/bin:$HOME/bin:$HOME/.local/bin:\
+	$HOME/.gem/ruby/3.6.0/bin:$PATH"
 
 # Enable extended globbing
 shopt -s extglob

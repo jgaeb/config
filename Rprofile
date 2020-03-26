@@ -16,8 +16,7 @@ assign(
     envir = personal
 )
 
-attach(personal)
-
+suppressMessages(attach(personal))
 rm(personal)
 
 # Stop R from opening an X11 window every time online documentation is opened.
