@@ -134,6 +134,11 @@ if !&textwidth
 	set textwidth=80
 endif
 
+" Default tab behavior if not otherwise set
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
 " Automatically install the solarized dark color scheme
 if empty(glob("~/.vim/colors/solarized.vim"))
   silent !curl -fLo ~/.vim/colors/solarized.vim --create-dirs
