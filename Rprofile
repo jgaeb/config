@@ -27,3 +27,4 @@ options("warnPartialMatchDollar" = TRUE)
 
 # Issue an error if an `if` statement has length greater than one.
 Sys.setenv("_R_CHECK_LENGTH_1_CONDITION_" = "true")
+
