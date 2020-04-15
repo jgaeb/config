@@ -9,6 +9,6 @@ Host soal-?
 	ForwardX11=yes
 	ForwardX11Trusted=yes
 
-Host ca-debt
+Host gcp
 	HostName=23.251.146.98
 	User=jgaeb
