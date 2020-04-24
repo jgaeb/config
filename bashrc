@@ -1,6 +1,18 @@
-# Make sure local binaries are in path
-export PATH="$HOME/Library/Python/3.7/bin:$HOME/bin:$HOME/.local/bin:\
-	$HOME/.gem/ruby/3.6.0/bin:$PATH"
+##################################### PATH ##################################### 
+
+# Add rust path
+export PATH="$HOME/.cargo/bin:$PATH"
+# Add Python local path
+export PATH="$HOME/Library/Python/3.7/bin:$PATH"
+# Add local binaries
+export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+# Add Ruby paths
+export PATH="$HOME/.gem/ruby/3.6.0/bin:$PATH"
+
+# Update manpath to find local man pages
+export MANPATH="/usr/local/man:$MANPATH"
+
+################################### GENERAL ####################################
 
 # Enable extended globbing
 shopt -s extglob
@@ -18,6 +30,7 @@ fi
 # Ensure locale settings are correct
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+
 
 # Source for great good!
 if [[ -e ~/.ghcup/env ]]
