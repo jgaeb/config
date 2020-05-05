@@ -1,7 +1,7 @@
 Host *
 	ControlMaster=auto
 	ControlPath=~/.ssh/%r@%h:%p
-	ControlPersist=1m
+	ControlPersist=yes
 
 Host soal-?
 	HostName=%h.stanford.edu
