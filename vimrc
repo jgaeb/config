@@ -139,6 +139,10 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
+" Set the local leader to be "\" and global leader to be "-"
+set mapleader "-"
+set maplocalleader "\\"
+
 " Automatically install the solarized dark color scheme
 if empty(glob("~/.vim/colors/solarized.vim"))
   silent !curl -fLo ~/.vim/colors/solarized.vim --create-dirs
