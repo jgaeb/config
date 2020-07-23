@@ -12,3 +12,8 @@ Host soal-?
 Host gcp
 	HostName=23.251.146.98
 	User=jgaeb
+
+Host cmt
+  HostName=54.244.164.3
+  User=ubuntu
+  Port=28578
