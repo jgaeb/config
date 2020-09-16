@@ -15,5 +15,5 @@ Host gcp
 
 Host cmt
   HostName=54.244.164.3
-  User=ubuntu
+  User=jgaeb
   Port=28578
