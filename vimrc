@@ -176,6 +176,7 @@ Plug 'chrisbra/csv.vim'
 Plug 'lervag/vimtex'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'leafgarland/typescript-vim'
+Plug 'JuliaEditorSupport/julia-vim'
 
 call plug#end()
 
