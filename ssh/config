@@ -17,3 +17,10 @@ Host cmt
   HostName=54.244.164.3
   User=jgaeb
   Port=28578
+
+Host rice
+  HostName=rice.stanford.edu
+  User=jgaeb
+  ForwardX11=yes
+  ForwardX11Trusted=yes
+
