@@ -1,20 +1,20 @@
 Host *
-	ControlMaster=auto
-	ControlPath=~/.ssh/%r@%h:%p
-	ControlPersist=yes
+  ControlMaster=auto
+  ControlPath=~/.ssh/%r@%h:%p
+  ControlPersist=yes
 
 Host soal-?
-	HostName=%h.stanford.edu
-	User=jgaeb
-	ForwardX11=yes
-	ForwardX11Trusted=yes
+  HostName=%h.stanford.edu
+  User=jgaeb
+  ForwardX11=yes
+  ForwardX11Trusted=yes
 
 Host gcp
-	HostName=23.251.146.98
-	User=jgaeb
+  HostName=23.251.146.98
+  User=jgaeb
 
 Host cmt
-  HostName=54.244.164.3
+  HostName=18.236.99.72
   User=jgaeb
   Port=28578
 
