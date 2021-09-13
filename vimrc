@@ -178,6 +178,8 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'leafgarland/typescript-vim'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'eigenfoo/stan-vim'
+Plug 'tpope/vim-liquid'
+Plug 'plasticboy/vim-markdown'
 
 call plug#end()
 
