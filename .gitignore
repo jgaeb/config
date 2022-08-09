@@ -1,5 +1,6 @@
 # To avoid uploading any swapfiles etc to github
 vim/*
+!vim/spell/
 
 # To avoid uploading any private keys, but uploading public keys
 ssh/*
@@ -12,3 +13,6 @@ config/htop
 config/configstore
 config/gtk-2.0
 config/iterm2
+
+# Make the path specific to each machine
+path

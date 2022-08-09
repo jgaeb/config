@@ -1,22 +1,11 @@
 ##################################### PATH #####################################
 
-# Add rust path
-export PATH="$HOME/.cargo/bin:$PATH"
-# Add Python local path
-export PATH="$HOME/Library/Python/3.7/bin:$PATH"
-# Add local binaries
-export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
-# Add Ruby paths
-export PATH=/opt/homebrew/opt/ruby/bin:$PATH
-export PATH=$( gem environment gemdir )/bin:$PATH
-
-# Update manpath to find local man pages
-export MANPATH="/usr/local/man:$MANPATH"
+source ~/.path
 
 ################################### GENERAL ####################################
 
 # Set VISUAL and EDITOR to nvim or vim otherwise
-if which nvim > /dev/null
+if which nvim > /dev/null 2>&1
 then
 	export EDITOR=$( which nvim )
 	export VISUAL=$( which nvim )
