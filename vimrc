@@ -1,14 +1,3 @@
-" An example for a vimrc file.
-"
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2015 Mar 24
-"
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"	      for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-"	    for OpenVMS:  sys$login:.vimrc
-
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
@@ -185,6 +174,18 @@ call plug#end()
 
 " Open nvim-r terminals in new tmux pane instead of in nvim
 if has('nvim')
-   let R_in_buffer = 0
+   let R_external_term = 0
    let R_source = $HOME . '/.vim/bundle/Nvim-R/R/tmux_split.vim'
 endif
+
+" Compile latex files with the '-shell-escape' flag for minted.
+let g:vimtex_compiler_latexmk = {
+    \ 'options' : [
+    \    '-xelatex',
+    \    '-shell-escape',
+    \    '-verbose',
+    \    '-file-line-error',
+    \    '-synctex=1',
+    \    '-interaction=nonstopmode',
+    \ ],
+    \}
