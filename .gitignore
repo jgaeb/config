@@ -1,6 +1,7 @@
 # To avoid uploading any swapfiles etc to github
 vim/*
 !vim/spell/
+vim/spell/*.spl
 
 # To avoid uploading any private keys, but uploading public keys
 ssh/*
@@ -13,6 +14,10 @@ config/htop
 config/configstore
 config/gtk-2.0
 config/iterm2
+config/rclone
 
 # Make the path specific to each machine
 path
+
+# Don't check in indexing files
+.DS_Store
