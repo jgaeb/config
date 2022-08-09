@@ -24,3 +24,8 @@ Host rice
   ForwardX11=yes
   ForwardX11Trusted=yes
 
+host fasrc
+  HostName=login.rc.fas.harvard.edu
+  User=jgaebler
+  ForwardX11=yes
+  ForwardX11Trusted=yes
