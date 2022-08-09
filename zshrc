@@ -7,9 +7,8 @@ export PATH="$HOME/Library/Python/3.7/bin:$PATH"
 # Add local binaries
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 # Add Ruby paths
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export PATH="/usr/local/ruby/gems/3.0.0/bin:$PATH"
-export PATH="$HOME/.gem/ruby3.0.0/bin:$PATH"
+export PATH=/opt/homebrew/opt/ruby/bin:$PATH
+export PATH=$( gem environment gemdir )/bin:$PATH
 
 # Update manpath to find local man pages
 export MANPATH="/usr/local/man:$MANPATH"
