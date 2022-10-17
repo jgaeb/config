@@ -168,7 +168,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'eigenfoo/stan-vim'
 Plug 'tpope/vim-liquid'
-Plug 'plasticboy/vim-markdown'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 
 call plug#end()
 
@@ -189,3 +189,6 @@ let g:vimtex_compiler_latexmk = {
     \    '-interaction=nonstopmode',
     \ ],
     \}
+
+" Use sioyek to view files
+let g:vimtex_view_method = 'sioyek'
