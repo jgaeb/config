@@ -31,11 +31,6 @@ map Q gq
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
 
-" In many terminal emulators the mouse works just fine, thus enable it.
-if has('mouse')
-  set mouse=a
-endif
-
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
 
@@ -169,8 +164,15 @@ Plug 'JuliaEditorSupport/julia-vim'
 Plug 'eigenfoo/stan-vim'
 Plug 'tpope/vim-liquid'
 Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'github/copilot.vim', {'branch': 'release'}
 
 call plug#end()
+
+" Disable the arrow keys in normal mode
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
 
 " Open nvim-r terminals in new tmux pane instead of in nvim
 if has('nvim')
