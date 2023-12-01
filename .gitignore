@@ -1,6 +1,7 @@
 # To avoid uploading any swapfiles etc to github
 vim/*
 !vim/spell/
+!vim/ftplugin/
 vim/spell/*.spl
 
 # To avoid uploading any private keys, but uploading public keys
@@ -15,6 +16,7 @@ config/configstore
 config/gtk-2.0
 config/iterm2
 config/rclone
+config/git
 
 # Make the path specific to each machine
 path

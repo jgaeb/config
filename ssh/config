@@ -13,6 +13,10 @@ Host gcp
   HostName=23.251.146.98
   User=jgaeb
 
+Host gcp-toddbook
+  HostName=34.29.207.220
+  User=johann.gaebler
+
 Host cmt
   HostName=18.236.99.72
   User=jgaeb
@@ -24,8 +28,20 @@ Host rice
   ForwardX11=yes
   ForwardX11Trusted=yes
 
-host fasrc
+Host fasrc
   HostName=login.rc.fas.harvard.edu
   User=jgaebler
+  ForwardX11=yes
+  ForwardX11Trusted=yes
+
+Host holylogin??
+  HostName=%h.rc.fas.harvard.edu
+  user=jgaebler
+  ForwardX11=yes
+  ForwardX11Trusted=yes
+
+Host boslogin??
+  HostName=%h.rc.fas.harvard.edu
+  user=jgaebler
   ForwardX11=yes
   ForwardX11Trusted=yes

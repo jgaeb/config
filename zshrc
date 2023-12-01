@@ -83,3 +83,4 @@ PROMPT="%K{blue}%F{black} 算 %f%k%F{blue}%f "
 # Set the right-hand prompt
 RPROMPT='%F{yellow}%f%K{yellow}%F{black} $( short_pwd ) %f%k'
 RPROMPT+='%F{green}%K{yellow}%k%f%K{green}%F{black} (%n@%m)'
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi

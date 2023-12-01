@@ -168,8 +168,8 @@ Plug 'leafgarland/typescript-vim'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'eigenfoo/stan-vim'
 Plug 'tpope/vim-liquid'
-Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'github/copilot.vim', {'branch': 'release'}
+Plug 'dense-analysis/ale'
 
 call plug#end()
 
@@ -179,16 +179,9 @@ noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
 
-" Open nvim-r terminals in new tmux pane instead of in nvim
-if has('nvim')
-   let R_external_term = 0
-   let R_source = $HOME . '/.vim/bundle/Nvim-R/R/tmux_split.vim'
-endif
-
-" Compile latex files with the '-shell-escape' flag for minted.
+" Compile latex files with the '-shell-escape' flag for minted and use lualatex
 let g:vimtex_compiler_latexmk = {
     \ 'options' : [
-    \    '-xelatex',
     \    '-shell-escape',
     \    '-verbose',
     \    '-file-line-error',
@@ -196,6 +189,21 @@ let g:vimtex_compiler_latexmk = {
     \    '-interaction=nonstopmode',
     \ ],
     \}
+let g:vimtex_compiler_latexmk_engines = {
+  \ '_'                : '-lualatex',
+  \ 'pdfdvi'           : '-pdfdvi',
+  \ 'pdfps'            : '-pdfps',
+  \ 'pdflatex'         : '-pdf',
+  \ 'luatex'           : '-lualatex',
+  \ 'lualatex'         : '-lualatex',
+  \ 'xelatex'          : '-xelatex',
+  \ 'context (pdftex)' : '-pdf -pdflatex=texexec',
+  \ 'context (luatex)' : '-pdf -pdflatex=context',
+  \ 'context (xetex)'  : '-pdf -pdflatex=''texexec --xtx''',
+  \}
 
 " Use sioyek to view files
 let g:vimtex_view_method = 'sioyek'
+
+" Automatically lint files with ALE on save
+let g:ale_fix_on_save = 1
