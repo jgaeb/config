@@ -17,6 +17,8 @@ config/gtk-2.0
 config/iterm2
 config/rclone
 config/git
+config/gcloud/
+config/mdless/
 
 # Make the path specific to each machine
 path
