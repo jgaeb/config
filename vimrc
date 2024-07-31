@@ -170,6 +170,9 @@ Plug 'eigenfoo/stan-vim'
 Plug 'tpope/vim-liquid'
 Plug 'github/copilot.vim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
+Plug 'Julian/lean.nvim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/plenary.nvim'
 
 call plug#end()
 
@@ -204,6 +207,27 @@ let g:vimtex_compiler_latexmk_engines = {
 
 " Use sioyek to view files
 let g:vimtex_view_method = 'sioyek'
+
+" Check if the virtual environment directory exists in neovim and create it
+if has('nvim')
+  " Get the path to python and python3
+  let venv_path = expand('~/.nvim-venv')
+  let python_path = venv_path . '/bin/python'
+  let python3_path = venv_path . '/bin/python3'
+
+  " If the virtual environment doesn't exist, create it
+  if !isdirectory(venv_path)
+      " Create the virtual environment
+      silent execute '!python3 -m venv ' . venv_path
+
+      " Install pynvim
+      silent execute '!' . python3_path . ' -m pip install pynvim'
+  endif
+
+  " Set the Vim global variables
+  let g:python_host_prog = python_path
+  let g:python3_host_prog = python3_path
+endif
 
 " Automatically lint files with ALE on save
 let g:ale_fix_on_save = 1
