@@ -243,5 +243,14 @@ if has('nvim')
   let g:python3_host_prog = python3_path
 endif
 
+" Fix mypy not using the correct executable when running in a virtual environment
+if !empty($VIRTUAL_ENV)
+  " Get the path to the local Python executable
+  let python_exec = expand('$VIRTUAL_ENV/bin/python')
+
+  " Update ALE's mypy options to use the local Python executable
+  let g:ale_python_mypy_options = '--python-executable ' . python_exec
+endif
+
 " Automatically lint files with ALE on save
 let g:ale_fix_on_save = 1
