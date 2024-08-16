@@ -132,24 +132,6 @@ set expandtab
 let mapleader = "-"
 let maplocalleader = "\\"
 
-" Automatically install the solarized dark color scheme
-if empty(glob("~/.vim/colors/solarized.vim"))
-  silent !curl -fLo ~/.vim/colors/solarized.vim --create-dirs
-		\ https://raw.githubusercontent.com/altercation/vim-colors-solarized/master/colors/solarized.vim
-  silent !curl -fLo ~/.vim/autoload/togglebg.vim --create-dirs
-  		\ https://raw.githubusercontent.com/altercation/vim-colors-solarized/master/autoload/togglebg.vim
-  silent !curl -fLo ~/.vim/bitmaps/togglebg.png --create-dirs
-		\ https://github.com/altercation/vim-colors-solarized/blob/master/bitmaps/togglebg.png?raw=true
-  silent !curl -fLo ~/.vim/doc/solarized.txt --create-dirs
-  		\ https://raw.githubusercontent.com/altercation/vim-colors-solarized/master/doc/solarized.txt
-  silent !curl -fLo ~/.vim/doc/tags --create-dirs
-		\ https://raw.githubusercontent.com/altercation/vim-colors-solarized/master/doc/tags
-endif
-
-" Enable solarized dark
-set background=dark
-colorscheme solarized
-
 " Automatically install vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -173,6 +155,11 @@ Plug 'dense-analysis/ale'
 Plug 'Julian/lean.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/plenary.nvim'
+if has('neovim')
+  Plug 'lifepillar/vim-solarized8', {'branch': 'neovim'}
+else
+  Plug 'lifepillar/vim-solarized8', {'branch': 'master'}
+endif
 
 call plug#end()
 
@@ -181,6 +168,10 @@ noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
+
+" Set the colorschem to solarized
+set background=dark
+colorscheme solarized8_low
 
 " Compile latex files with the '-shell-escape' flag for minted and use lualatex
 let g:vimtex_compiler_latexmk = {
