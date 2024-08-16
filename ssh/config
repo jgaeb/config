@@ -45,3 +45,9 @@ Host boslogin??
   user=jgaebler
   ForwardX11=yes
   ForwardX11Trusted=yes
+
+Host fasse
+  HostName=fasselogin.rc.fas.harvard.edu
+  User=jgaebler
+  ForwardX11=yes
+  ForwardX11Trusted=yes
