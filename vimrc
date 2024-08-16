@@ -217,11 +217,25 @@ if has('nvim')
 
   " If the virtual environment doesn't exist, create it
   if !isdirectory(venv_path)
+      " Check if python3 is installed
+      if !executable('python3')
+          echoerr 'Python3 is not installed. Please install it using brew.'
+          finish
+      endif
+
       " Create the virtual environment
       silent execute '!python3 -m venv ' . venv_path
 
       " Install pynvim
       silent execute '!' . python3_path . ' -m pip install pynvim'
+
+      if !executable('brew')
+          echoerr 'Homebrew is not installed. Please install it.'
+          finish
+      endif
+
+      " Install mypy, flake8, and pylint using brew
+      silent execute '!brew install mypy flake8 pylint'
   endif
 
   " Set the Vim global variables
