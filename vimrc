@@ -236,6 +236,10 @@ if has('nvim')
 
       " Install mypy, flake8, and pylint using brew
       silent execute '!brew install mypy flake8 pylint'
+
+      " Remind myself to add PYLINT_VENV_PATH to my .path file
+      echo '`pylint` may not work correctly until you add the following to your .path file:'
+      echo 'export PYLINT_VENV_PATH=.venv:.virtualenv:venv:virtualenv'
   endif
 
   " Set the Vim global variables
