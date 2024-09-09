@@ -2,6 +2,9 @@
 vim/*
 !vim/spell/
 !vim/ftplugin/
+!vim/after/
+vim/after/*
+!vim/after/ftplugin/
 vim/spell/*.spl
 
 # To avoid uploading any private keys, but uploading public keys
