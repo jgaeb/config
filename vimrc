@@ -142,7 +142,8 @@ endif
 " Load vim-plug packages, being sure to use single quotes
 call plug#begin('~/.vim/bundle')
 
-Plug 'jalvesaq/Nvim-R'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'R-nvim/R.nvim'
 Plug 'chrisbra/csv.vim'
 Plug 'lervag/vimtex'
 Plug 'christoomey/vim-tmux-navigator'
@@ -155,11 +156,12 @@ Plug 'dense-analysis/ale'
 Plug 'Julian/lean.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/plenary.nvim'
-if has('neovim')
+if has('nvim')
   Plug 'lifepillar/vim-solarized8', {'branch': 'neovim'}
 else
   Plug 'lifepillar/vim-solarized8', {'branch': 'master'}
 endif
+Plug 'Vigemus/iron.nvim'
 
 call plug#end()
 
@@ -172,6 +174,31 @@ noremap <Right> <nop>
 " Set the colorschem to solarized
 set background=dark
 colorscheme solarized8_low
+
+" Treesitter and R-nvim settings
+if has('nvim')
+  lua << EOF
+  if vim.fn.executable('tree-sitter') ~= 1 then
+    vim.notify(
+      'tree-sitter-cli not found. R.nvim requires treesitter and will not be loaded.\n' ..
+      'Install via your package manager:\n' ..
+      '  brew install tree-sitter-cli\n' ..
+      '  cargo install tree-sitter-cli\n' ..
+      '  npm install -g tree-sitter-cli',
+      vim.log.levels.WARN
+    )
+  else
+    require('nvim-treesitter').setup({})
+    local langs = { 'r', 'markdown', 'rnoweb', 'yaml' }
+    require('nvim-treesitter').install(langs):wait()
+    vim.api.nvim_create_autocmd('FileType', {
+      pattern = langs,
+      callback = function() vim.treesitter.start() end,
+    })
+    require("r").setup({})
+  end
+EOF
+endif
 
 " Compile latex files with the '-shell-escape' flag for minted and use lualatex
 let g:vimtex_compiler_latexmk = {
@@ -249,3 +276,36 @@ endif
 
 " Automatically lint files with ALE on save
 let g:ale_fix_on_save = 1
+
+" Setup iron.nvim for REPL integration
+if has('nvim')
+  lua << EOF
+  local function get_python_cmd()
+    local venv = os.getenv("VIRTUAL_ENV")
+    if venv then
+      return { venv .. "/bin/python" }
+    else
+      return { "python" }
+    end
+  end
+
+  require("iron.core").setup {
+    config = {
+      repl_definition = {
+        python = {
+          command = get_python_cmd(),
+          format = require("iron.fts.common").bracketed_paste_python,
+          env = { PYTHON_BASIC_REPL = "1" },
+        },
+      },
+      repl_open_cmd = "vertical botright 80 split",
+    },
+    keymaps = {
+      send_line = "<localleader>sl",
+      visual_send = "<localleader>sc",
+      send_file = "<localleader>sf",
+      send_paragraph = "<localleader>sp",
+    },
+  }
+EOF
+endif
