@@ -3,7 +3,6 @@
 	email = me@jgaeb.com
 [core]
 	autocrlf = input
-	editor = vim
 [push]
 	default = simple
 [commit]
