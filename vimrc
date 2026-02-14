@@ -98,7 +98,7 @@ set number
 " Use kj to switch into normal mode.
 inoremap <silent> kj <ESC>
 if has('nvim')
-  tnoremap kj <C-\><C-n>
+  tnoremap <ESC> <C-\><C-n>
 endif
 
 " Save backups and swap files, and undo files in a specified folder in the home
@@ -198,6 +198,16 @@ if has('nvim')
     require("r").setup({})
   end
 EOF
+endif
+
+" Fix tmux navigation in terminal neovim
+if has('nvim')
+  autocmd VimEnter * if exists(':TmuxNavigateLeft')
+    \ | tnoremap <silent> <C-h> <C-\><C-n>:TmuxNavigateLeft<CR>
+    \ | tnoremap <silent> <C-j> <C-\><C-n>:TmuxNavigateDown<CR>
+    \ | tnoremap <silent> <C-k> <C-\><C-n>:TmuxNavigateUp<CR>
+    \ | tnoremap <silent> <C-l> <C-\><C-n>:TmuxNavigateRight<CR>
+    \ | endif
 endif
 
 " Compile latex files with the '-shell-escape' flag for minted and use lualatex
