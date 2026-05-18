@@ -171,6 +171,21 @@ noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
 
+" vim-solarized8 uses different branches for Vim (`master`) and Neovim
+" (`neovim`) but both editors share one bundle directory. Make sure the right
+" branch is checked out before sourcing the colorscheme, otherwise Vim chokes
+" on the Treesitter `@`-prefixed highlight groups on the `neovim` branch.
+let s:solarized8_dir = expand('~/.vim/bundle/vim-solarized8')
+if isdirectory(s:solarized8_dir . '/.git')
+  let s:want_branch = has('nvim') ? 'neovim' : 'master'
+  let s:cur_branch = trim(system(
+        \ 'git -C ' . shellescape(s:solarized8_dir) . ' rev-parse --abbrev-ref HEAD'))
+  if s:cur_branch !=# s:want_branch
+    call system(
+          \ 'git -C ' . shellescape(s:solarized8_dir) . ' checkout ' . s:want_branch)
+  endif
+endif
+
 " Set the colorschem to solarized
 set background=dark
 colorscheme solarized8_low
