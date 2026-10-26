@@ -314,13 +314,22 @@ if has('nvim')
     end
   end
 
+  local function get_python_cmd()
+    local venv = os.getenv("VIRTUAL_ENV")
+    local base = venv and (venv .. "/bin/") or ""
+    if vim.fn.executable(base .. "ipython") == 1 then
+      return { base .. "ipython", "--no-autoindent" }
+    else
+      return { base .. "python3" }
+    end
+  end
+
   require("iron.core").setup {
     config = {
       repl_definition = {
         python = {
           command = get_python_cmd(),
-          format = require("iron.fts.common").bracketed_paste_python,
-          env = { PYTHON_BASIC_REPL = "1" },
+          format = require("iron.fts.common").bracketed_paste,
         },
       },
       repl_open_cmd = "vertical botright 80 split",
