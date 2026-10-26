@@ -15,3 +15,9 @@
 	tool = nvimdiff2
 [difftool "nvimdiff2"]
 	cmd = nvim -d $LOCAL $REMOTE
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
