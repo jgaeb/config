@@ -3,31 +3,6 @@ Host *
   ControlPath=~/.ssh/%r@%h:%p
   ControlPersist=yes
 
-Host soal-?
-  HostName=%h.stanford.edu
-  User=jgaeb
-  ForwardX11=yes
-  ForwardX11Trusted=yes
-
-Host gcp
-  HostName=23.251.146.98
-  User=jgaeb
-
-Host gcp-toddbook
-  HostName=34.29.207.220
-  User=johann.gaebler
-
-Host cmt
-  HostName=18.236.99.72
-  User=jgaeb
-  Port=28578
-
-Host rice
-  HostName=rice.stanford.edu
-  User=jgaeb
-  ForwardX11=yes
-  ForwardX11Trusted=yes
-
 Host fasrc
   HostName=login.rc.fas.harvard.edu
   User=jgaebler
@@ -51,3 +26,19 @@ Host fasse
   User=jgaebler
   ForwardX11=yes
   ForwardX11Trusted=yes
+
+Host dtn.torch.hpc.nyu.edu
+  User=jdg8969
+  ForwardX11=yes
+  ForwardX11Trusted=yes
+
+Host torch login.torch.hpc.nyu.edu
+  User=jdg8969
+  Hostname=login.torch.hpc.nyu.edu
+  ForwardX11=yes
+  ForwardX11Trusted=yes
+
+Host cs* cl* gr* ga* gh* gl* gb*
+  User=jdg8969
+  ProxyCommand=ssh -W %h:%p torch-login
+  ForwardAgent=yes
