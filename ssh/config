@@ -40,6 +40,10 @@ Host torch login.torch.hpc.nyu.edu
   Hostname=login.torch.hpc.nyu.edu
   ForwardX11=yes
   ForwardX11Trusted=yes
+  # The login address rotates across nodes with different host keys (per NYU docs).
+  StrictHostKeyChecking=no
+  UserKnownHostsFile=/dev/null
+  LogLevel=ERROR
 
 Host cs* cl* gr* ga* gh* gl* gb*
   User=jdg8969
