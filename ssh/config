@@ -43,5 +43,4 @@ Host torch login.torch.hpc.nyu.edu
 
 Host cs* cl* gr* ga* gh* gl* gb*
   User=jdg8969
-  ProxyCommand=ssh -W %h:%p torch-login
-  ForwardAgent=yes
+  ProxyJump=torch
